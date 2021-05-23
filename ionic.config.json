@@ -1,0 +1,8 @@
+{
+  "name": "consumer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "f0c54406"
+}
