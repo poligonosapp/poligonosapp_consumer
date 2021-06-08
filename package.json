@@ -1,6 +1,7 @@
 {
     "name": "poligonosapp_consumer",
     "version": "1.8.7",
+    "type":"module",
     "license": "Apache-2.0",
     "author": "Fabio Rodrigues <https://www.facebook.com/kefaro>, Luis Mendes <machadoluismendes@gmail.com>",
     "homepage": "https://www.poligonosapp.herokuapp.com",
