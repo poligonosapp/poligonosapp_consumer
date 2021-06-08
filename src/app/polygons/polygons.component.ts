@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import * as L from 'leaflet';
 
+
 const mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
 const LEAFLET_ACCESS_TOKEN = require('./auth');
