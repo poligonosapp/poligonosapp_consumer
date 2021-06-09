@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as L from 'leaflet';
+// import * as L from 'leaflet';
+import * as L from '@poligonosdemos/leaflet';// snyk monitor
 
+// import * as LT from '@types/leaflet';
+
+// Lighthouse Perfomance 19 async promise ?????
+// eslint-disable-next-line prefer-arrow/prefer-arrow-functions
+// async function  lazyloadingwebvitals(){
 
 const mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
@@ -27,6 +33,8 @@ const polygon = L.polygon([
   [51.51, -0.047],
 ]).addTo(mymap);
 
+// }
+
 @Component({
   selector: 'app-polygons',
   templateUrl: './polygons.component.html',
@@ -36,6 +44,12 @@ export class PolygonsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    lazyloadingwebvitals().then(
+      () => {
+        console.log('leaflet promise resolved');
+      }
+    );
+  }
 
 }
