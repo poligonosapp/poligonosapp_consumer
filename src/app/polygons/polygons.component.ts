@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 // import * as L from 'leaflet';
-import * as L from '@poligonosdemos/leaflet';// snyk monitor
+// import * as L from '@poligonosdemos/leaflet';// snyk monitor
+const { L } = require('@poligonosdemos/leaflet');
 
 // import * as LT from '@types/leaflet';
 
