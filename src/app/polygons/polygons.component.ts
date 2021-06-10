@@ -12,7 +12,9 @@ const { L } = require('@poligonosdemos/leaflet');
 
 const mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
-const LEAFLET_ACCESS_TOKEN = require('./auth');
+const LEAFLET_ACCESS_TOKEN = require('./auth.service');
+
+L.tileLayer.accessToken = LEAFLET_ACCESS_TOKEN; // || process.env.leaflet-secret;
 
 L.tileLayer(
   'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
@@ -46,11 +48,7 @@ export class PolygonsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    lazyloadingwebvitals().then(
-      () => {
-        console.log('leaflet promise resolved');
-      }
-    );
+
   }
 
 }
