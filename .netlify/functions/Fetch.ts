@@ -1,6 +1,6 @@
-const fetch = require("node-fetch");
+const { fetch } = require("node-fetch");
 
-const API_ENDPOINT = 'https://cat-fact.herokuapp.com/facts';
+const API_ENDPOINT = 'https://www.poligonosapp.herokuapp.com';
 
 exports.handler = async (event, context) => {
   try {
@@ -15,6 +15,5 @@ exports.handler = async (event, context) => {
     };
   }
 };
-    
 
-    
+
