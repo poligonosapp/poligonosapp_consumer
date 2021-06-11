@@ -8,9 +8,9 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 
-import { PolygonsComponent } from './src/app/polygons/polygons.component';
+// import { PolygonsComponent } from './src/app/polygons/polygons.component';
 
-import { PolygonsModule } from './polygons/polygons.module';
+// import { PolygonsModule } from './polygons';
 
 @NgModule({
   schemas: [
@@ -21,9 +21,8 @@ import { PolygonsModule } from './polygons/polygons.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab1PageRoutingModule,
-    PolygonsModule
+    Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page, PolygonsComponent]
+  declarations: [Tab1Page]
 })
 export class Tab1PageModule {}
