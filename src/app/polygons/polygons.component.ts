@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 // import * as L from '@poligonosdemos/leaflet';// snyk monitor
 const { L } = require('@poligonosdemos/leaflet');
 
+
+
 // import * as LT from '@types/leaflet';
 
 // Lighthouse Perfomance 19 async promise ?????
@@ -34,6 +36,13 @@ const polygon = L.polygon([
   [51.503, -0.06],
   [51.51, -0.047],
 ]).addTo(mymap);
+
+const { poligonos } = require('./polygons.geojson');
+
+L.geoJSON(poligonos).addTo(mymap);
+
+const myLayer = L.geoJSON().addTo(mymap);
+myLayer.addData(poligonos);
 
 // }
 

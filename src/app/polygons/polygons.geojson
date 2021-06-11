@@ -1,4 +1,4 @@
-let poligonos = 
+const {poligonos} =
 [
   {
        "type": "Feature",
