@@ -17,7 +17,7 @@ const LEAFLET_ACCESS_TOKEN = require('./auth.service');
 L.tileLayer.accessToken = LEAFLET_ACCESS_TOKEN; // || process.env.leaflet-secret;
 
 L.tileLayer(
-  'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + LEAFLET_ACCESS_TOKEN,
+  'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
   {
     attribution:
       // eslint-disable-next-line max-len
@@ -25,7 +25,8 @@ L.tileLayer(
     maxZoom: 18,
     id: 'mapbox/streets-v11',
     tileSize: 512,
-    zoomOffset: -1
+    zoomOffset: -1,
+    accessToken: LEAFLET_ACCESS_TOKEN,
   }
 ).addTo(mymap);
 
@@ -36,8 +37,6 @@ const polygon = L.polygon([
 ]).addTo(mymap);
 
 // }
-
-// @import "polygons.component.scss";
 
 @Component({
   selector: 'app-polygons',
