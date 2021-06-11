@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 const github = require('@actions/github');
 const core = require('@actions/core');
 
+let accessToken;
+
 async function run() {
     // This should be a token with access to your repository scoped in as a secret.
     // The YML workflow will need to set myToken with the GitHub Secret Token
@@ -17,6 +19,7 @@ async function run() {
   const octokit2 = github.getOctokit(myToken2);
 
   //setting L.token
+  accessToken = octokit2;
   L.mapbox.accessToken = octokit2;
 
     // You can also pass in additional options as a second parameter to getOctokit
@@ -50,6 +53,8 @@ const map = L.map('map', {
 const { mapMobile } = L.map('map').fitWorld();
 
 const ghendpoint = 'https://api.github.com/graphql';
+
+
 
 //const accessToken = process.env.leaflet-secret;
 
@@ -110,16 +115,16 @@ const verify_signature = async (
 
         // L.mapbox.accessToken = verify_signature || publicKey;
 
-        L.tileLayer(
-            'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
-            {
-                attribution:
-                    'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                maxZoom: 18,
-                tileSize: 512,
-                zoomOffset: -1,
-            }
-        ).addTo(mapMobile)
+      L.tileLayer(
+        'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token='+accessToken,
+        {
+          attribution:
+            'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          maxZoom: 18,
+          tileSize: 512,
+          zoomOffset: -1,
+        }
+      ).addTo(mapMobile);
 
     } finally {
 
