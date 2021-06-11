@@ -6,6 +6,22 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+        children: [
+      {
+        path: 'polygons',
+        children: [
+          {
+            path: '',
+            loadChildren: '../polygons/polygons.module#PolygonsModule'
+          }
+        ]
+      },
+      {
+        path: '',
+        redirectTo: '/app/polygons/polygons',
+        pathMatch: 'full'
+      }
+    ]
   }
 ];
 
