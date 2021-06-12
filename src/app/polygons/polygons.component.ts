@@ -4,6 +4,14 @@ import { Component, OnInit } from '@angular/core';
 // import * as L from '@poligonosdemos/leaflet';// snyk monitor
 const { L } = require('@poligonosdemos/leaflet');
 
+// const $ = require('jquery');
+
+// import * as $ from 'jquery';
+
+// $('#mapid').width();
+
+alert('loading polygons...');
+
 
 
 // import * as LT from '@types/leaflet';
@@ -58,6 +66,8 @@ export class PolygonsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+     alert('loading polygons...');
 
   }
 

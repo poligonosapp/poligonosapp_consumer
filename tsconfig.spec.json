@@ -9,7 +9,8 @@
   },
   "files": [
     "src/test.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "e2e/src/app/polygons/polygons.geojson"
   ],
   "include": [
     "src/**/*.spec.ts",
