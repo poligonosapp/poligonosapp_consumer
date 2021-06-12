@@ -27,6 +27,7 @@
         "@capacitor/haptics": "1.0.0",
         "@capacitor/keyboard": "1.0.0",
         "@ionic/angular": "^5.5.2",
+        "@types/geojson": "^7946.0.7",
         "@types/leaflet": "^1.7.1",
         "angular-cli-ghpages": "^1.0.0-rc.2",
         "css-what": "^5.0.1",

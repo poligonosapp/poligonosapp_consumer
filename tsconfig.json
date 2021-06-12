@@ -3,6 +3,9 @@
   "compileOnSave": false,
   "include": ["src/**/*"],
   "compilerOptions": {
+    "types": [
+      "node"
+    ],
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,

@@ -1,5 +1,5 @@
 {
-  "name": "consumer",
+  "name": "polygonosapp_consumer",
   "integrations": {
     "capacitor": {}
   },
