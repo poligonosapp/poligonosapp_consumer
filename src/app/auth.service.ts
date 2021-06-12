@@ -3,43 +3,7 @@ import { Injectable } from '@angular/core';
 const github = require('@actions/github');
 const core = require('@actions/core');
 
-let accessToken;
-
-async function run() {
-    // This should be a token with access to your repository scoped in as a secret.
-    // The YML workflow will need to set myToken with the GitHub Secret Token
-    // myToken: ${{ secrets.GITHUB_TOKEN }}
-    // https://help.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token#about-the-github_token-secret
-    const myToken = core.getInput('repo-token');
-
-    const octokit = github.getOctokit(myToken);
-
-  const myToken2 = core.getInput('leaflet-secret');
-
-  const octokit2 = github.getOctokit(myToken2);
-
-  //setting L.token
-  accessToken = octokit2;
-  L.mapbox.accessToken = octokit2;
-
-    // You can also pass in additional options as a second parameter to getOctokit
-    // const octokit = github.getOctokit(myToken, {userAgent: "MyActionVersion1"});
-
-    const { data: pullRequest } = await octokit.rest.pulls.get({
-        owner: 'poligonosapp',
-        repo: 'poligonos_consumer',
-        pull_number: 123,
-        mediaType: {
-          format: 'diff'
-        }
-    });
-
-    console.log(pullRequest);
-}
-
-run();
-
-
+const { accessToken:string };
 
 // import * as L from 'leaflet@0.7.7';
 const { L } = require('leaflet@0.7.7');
@@ -53,8 +17,6 @@ const map = L.map('map', {
 const { mapMobile } = L.map('map').fitWorld();
 
 const ghendpoint = 'https://api.github.com/graphql';
-
-
 
 //const accessToken = process.env.leaflet-secret;
 
@@ -140,5 +102,44 @@ const verify_signature = async (
 })
 export class AuthService {
 
-  constructor() { }
+  public const {LEAFLET_ACCESS_TOKEN:string};
+
+  constructor() {
+  run();
+  // verify_signature();
 }
+
+async function run() {
+  // This should be a token with access to your repository scoped in as a secret.
+  // The YML workflow will need to set myToken with the GitHub Secret Token
+  // myToken: ${{ secrets.GITHUB_TOKEN }}
+  // https://help.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token#about-the-github_token-secret
+  const myToken = core.getInput('repo-token');
+
+  const octokit = github.getOctokit(myToken);
+
+  const myToken2 = core.getInput('leaflet-secret');
+
+  const octokit2 = github.getOctokit(myToken2);
+
+  //setting L.token
+  // accessToken = octokit2;
+  this.LEAFLET_ACCESS_TOKEN = octokit2;
+  L.mapbox.accessToken = octokit2;
+
+  // You can also pass in additional options as a second parameter to getOctokit
+  // const octokit = github.getOctokit(myToken, {userAgent: "MyActionVersion1"});
+
+  const { data: pullRequest } = await octokit.rest.pulls.get({
+    owner: 'poligonosapp',
+    repo: 'poligonos_consumer',
+    pull_number: 123,
+    mediaType: {
+      format: 'diff'
+    }
+  });
+
+  console.log(pullRequest);
+}
+
+} // end

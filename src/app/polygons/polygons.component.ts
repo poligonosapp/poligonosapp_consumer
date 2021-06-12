@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 // import * as L from 'leaflet';
 // import * as L from '@poligonosdemos/leaflet';// snyk monitor
-const { L } = require('@poligonosdemos/leaflet');
+// @ts-ignore
+import {L} from '@poligonosdemos/leaflet';
 
 // const $ = require('jquery');
 
@@ -22,12 +23,14 @@ alert('loading polygons...');
 
 const mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
-const LEAFLET_ACCESS_TOKEN = require('./auth.service');
+import AuthService from './auth.service';
 
-L.tileLayer.accessToken = LEAFLET_ACCESS_TOKEN; // || process.env.leaflet-secret;
+const authService = new AuthService();
+
+L.tileLayer.accessToken = authService.LEAFLET_ACCESS_TOKEN; // || process.env.leaflet-secret;
 
 L.tileLayer(
-  'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + LEAFLET_ACCESS_TOKEN,
+  'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + authService.LEAFLET_ACCESS_TOKEN,
   {
     attribution:
       // eslint-disable-next-line max-len
