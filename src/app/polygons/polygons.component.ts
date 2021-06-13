@@ -44,15 +44,13 @@ L.tileLayer(
 ).addTo(mymap);
 
 // @ts-ignore
-const {polygon:GeoJSON} = typeof(GeoJSON) L.polygon([
+const polygon = L.polygon([
   [51.509, -0.08],
   [51.503, -0.06],
   [51.51, -0.047],
 ]).addTo(mymap);
 
 import {poligonos} from './polygons.geojson';
-
-
 
 L.geoJSON(poligonos).addTo(mymap);
 
