@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 // import * as L from '@poligonosdemos/leaflet';// snyk monitor
 // @ts-ignore
 import {L} from '@poligonosdemos/leaflet';
+import {GeoJSON} from '@types/geojson';
 
 // const $ = require('jquery');
 
@@ -42,13 +43,16 @@ L.tileLayer(
   }
 ).addTo(mymap);
 
-const polygon = L.polygon([
+// @ts-ignore
+const {polygon:GeoJSON} = typeof(GeoJSON) L.polygon([
   [51.509, -0.08],
   [51.503, -0.06],
   [51.51, -0.047],
 ]).addTo(mymap);
 
-const { poligonos } = require('./polygons.geojson');
+import {poligonos} from './polygons.geojson';
+
+
 
 L.geoJSON(poligonos).addTo(mymap);
 
