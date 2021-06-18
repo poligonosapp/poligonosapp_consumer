@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 // import * as L from 'leaflet';
 // import * as L from '@poligonosdemos/leaflet';// snyk monitor
 // @ts-ignore
-import {L} from '@poligonosdemos/leaflet';
+//import {L} from '@poligonosdemos/leaflet';
 // import {GeoJSON} from '@types/geojson';
 
-import {GeoJSON, Polygon} from 'poligonosapp';
+import { L,GeoJSON, Polygon} from 'poligonosapp';
 
 // const $ = require('jquery');
 
