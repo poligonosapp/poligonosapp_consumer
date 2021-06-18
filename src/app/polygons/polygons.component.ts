@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
 //import {L} from '@poligonosdemos/leaflet';
 // import {GeoJSON} from '@types/geojson';
 
-import { L,GeoJSON, Polygon} from 'poligonosapp';
+import { L, GeoJSON, Polygon} from 'poligonosapp';
 
 // const $ = require('jquery');
 

@@ -1,22 +1,28 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
+  "exclude": ["node_modules"],
   "include": ["src/**/*"],
   "compilerOptions": {
+        "paths": {
+      "jquery": ["node_modules/jquery/dist/jquery"],
+      "*": ["*", "generated/*"],
+            "lib-poligonosapp": [
+        "dist/lib-poligonosapp/lib-poligonosapp",
+        "dist/lib-poligonosapp"
+      ]
+    },
+        "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "strict": true,
     "types": [
       "node","geojson"
     ],
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
     "downlevelIteration": true,
-    "paths": {
-      "lib-poligonosapp": [
-        "dist/lib-poligonosapp/lib-poligonosapp",
-        "dist/lib-poligonosapp"
-      ]
-    },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
