@@ -1,3 +1,5 @@
+import { LoadingExample } from './loading-example';
+
 import { Component, OnInit } from '@angular/core';
 
 // import * as L from 'leaflet';
