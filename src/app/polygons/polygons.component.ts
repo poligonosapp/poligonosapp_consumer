@@ -1,3 +1,5 @@
+import * as HTMLElement from 'typescript';
+
 import { LoadingExample } from './loading-example';
 
 import { Component, OnInit } from '@angular/core';
@@ -58,9 +60,6 @@ import {poligonos} from './polygons.geojson';
 
 L.geoJSON(poligonos).addTo(mymap);
 
-const myLayer = L.geoJSON().addTo(mymap);
-myLayer.addData(poligonos);
-
 // }
 
 // @import "polygons.component.scss";
@@ -72,12 +71,42 @@ myLayer.addData(poligonos);
 })
 export class PolygonsComponent implements OnInit {
 
-  constructor() { }
+  constructor(const element: HTMLElement | null) {
+
+    const myLayer = L.geoJSON().addTo(mymap);
+    myLayer.addData(poligonos);
+
+    try {
+
+      // 1. Select the div element using the id property
+const app = document.getElementById("mapid");
+
+      // 2. Create a new <p></p> element programmatically
+const p = document.createElement("mapid");
+// 3. Add the text content
+p.textContent = "Welcome, Polygon User!";
+      //element.innerHTML = myLayer;
+// 4. Append the p element to the div element
+      // app?.appendChild(element);
+
+     // element.innerHTML = myLayer;
+
+    } finally {
+      //mapid lazy loading conclusion
+      let nodemon = require('nodemon');
+      nodemon.log('mapid lazy loading conclusion');
+    }
+
+  }
 
   ngOnInit() {
 
-     alert('loading polygons...');
+    alert('loading polygons...');
+
+
 
   }
+
+
 
 }

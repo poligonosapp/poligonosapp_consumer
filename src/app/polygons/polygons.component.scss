@@ -1,8 +1,7 @@
 #mapid {
   width: 600px;
   height: 400px;
-  color:green
-  // height: 180px;
+  color:green;
 }
 
 body {
@@ -12,8 +11,6 @@ body {
 html, body, #map {
   width: 600px;
   height: 400px;
-  // color:green
-  // height: 180px;
     height: 100%;
     width: 100vw;
     color: green;
@@ -125,7 +122,6 @@ html, body, #map {
   z-index: 800;
 }
 
-/* workaround for https://bugzilla.mozilla.org/show_bug.cgi?id=888319 */
 .leaflet-overlay-pane svg {
   -moz-user-select: none;
 }
