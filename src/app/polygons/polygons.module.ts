@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PolygonsComponent } from './polygons.component';
+import {LoadingExampleComponent} from "../loading-example/loading-example.component";
 
 @NgModule({
-  declarations: [PolygonsComponent],
+    declarations: [PolygonsComponent, LoadingExampleComponent],
   imports: [
     CommonModule
   ]
