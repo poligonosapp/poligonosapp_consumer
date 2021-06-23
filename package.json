@@ -1,6 +1,5 @@
-
-
-    "name": "poligonosapp_consumer",
+{
+  "name": "poligonosapp_consumer",
     "$schema": "./node_modules/ng-packagr/package.schema.json",
     "ngPackage": {
         "lib": {
