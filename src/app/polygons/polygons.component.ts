@@ -1,4 +1,7 @@
+import $ from "jquery";
+
 import * as HTMLElement from 'typescript';
+import * as Node from 'typescript';
 
 import { LoadingExample } from './loading-example';
 
@@ -60,6 +63,16 @@ import {poligonos} from './polygons.geojson';
 
 L.geoJSON(poligonos).addTo(mymap);
 
+class DivPolygonTypeScript implements HTMLELement{
+
+}
+
+class DivPolygonNode extends Node{
+  constructor() {
+    super();
+  }
+}
+
 // }
 
 // @import "polygons.component.scss";
@@ -71,33 +84,59 @@ L.geoJSON(poligonos).addTo(mymap);
 })
 export class PolygonsComponent implements OnInit {
 
-  constructor(const element: HTMLElement | null) {
+  constructor(let element: DivPolygonTypeScript) {
 
-    const myLayer = L.geoJSON().addTo(mymap);
+    newFunction();
+
+  }// end constructor TypeScript
+
+  constructor(let element: DivPolygonNode) {
+
+    newFunction();
+
+  } // end constructor Node
+
+  constructor(let element: null ) {
+
+    super();
+
+    newFunction();
+
+  } // end constructor null TypeScript
+
+  function newFunction() {
+
+const myLayer = L.geoJSON().addTo(mymap);
     myLayer.addData(poligonos);
 
     try {
+
+      $( "div" ).click(function() {
+  var htmlString = $( this ).html();
+  $( this ).text( htmlString );
+});
 
       // 1. Select the div element using the id property
 const app = document.getElementById("mapid");
 
       // 2. Create a new <p></p> element programmatically
-const p = document.createElement("mapid");
+const p = document.createElement("div");
 // 3. Add the text content
 p.textContent = "Welcome, Polygon User!";
       //element.innerHTML = myLayer;
 // 4. Append the p element to the div element
-      // app?.appendChild(element);
+       app?.appendChild(element);
 
      // element.innerHTML = myLayer;
 
     } finally {
       //mapid lazy loading conclusion
       let nodemon = require('nodemon');
-      nodemon.log('mapid lazy loading conclusion');
+      nodemon.log('div mapid lazy loading conclusion');
     }
 
-  }
+  } // end function newFunction
+
 
   ngOnInit() {
 
