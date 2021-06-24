@@ -1,8 +1,11 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
-  "exclude": ["node_modules"],
   "include": ["src/**/*"],
+    "exclude": [
+    "typings/*",
+    "node_modules"
+  ],
   "compilerOptions": {
         "paths": {
       "jquery": ["node_modules/jquery/dist/jquery"],

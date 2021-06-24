@@ -11,6 +11,18 @@
       "prefix": "app",
       "schematics": {},
       "architect": {
+        "build-webpack": {
+          "builder": "@angular-devkit/build-webpack:webpack",
+          "options": {
+            "webpackConfig": "webpack.config.ts"
+          }
+        },
+        "serve-webpack": {
+          "builder": "@angular-devkit/build-webpack:webpack-dev-server",
+          "options": {
+            "webpackConfig": "webpack.config.ts"
+          }
+        },
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {

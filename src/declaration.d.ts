@@ -1,7 +1,11 @@
 import 'poligonosapp';
+import '@types/jquery';
 import 'postcss-scss';
 import '@types/geojson';
 import '@types/leaflet';
 import './loading-example';
-declare module "*.css";
-declare module "*.ts";
+import './loading-controller';
+import './polygons';
+import '@types/node';
+declare module '*.css';
+declare module '*.ts';
