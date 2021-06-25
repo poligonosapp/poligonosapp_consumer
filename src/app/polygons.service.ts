@@ -1,3 +1,5 @@
+import 'poligonos-get';
+
 import { Injectable } from '@angular/core';
 
 import { PolygonsComponent, polygonLayer } from './polygons/polygons.component';

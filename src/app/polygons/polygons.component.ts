@@ -1,3 +1,5 @@
+import 'poligonos-get';
+
 import $ from "jquery";
 
 import * as HTMLElement from 'typescript';
