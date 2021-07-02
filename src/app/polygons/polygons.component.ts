@@ -41,8 +41,14 @@ const authService = new AuthService();
 
 L.tileLayer.accessToken = authService.LEAFLET_ACCESS_TOKEN; // || process.env.leaflet-secret;
 
+// append leaflet access token with angular jwt and polyfill
+
+const url = new URL('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?access_token={accessToken}');
+url.searchParams.append('{accessToken}', authService.leafletToken);
+console.log(url.toString()); // print: "https://www.example.com/?fr=yset_ie_syc_oracle&type=orcl_hpset&page=0#page0"
+
 L.tileLayer(
-  'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + authService.LEAFLET_ACCESS_TOKEN,
+  url,
   {
     attribution:
       // eslint-disable-next-line max-len

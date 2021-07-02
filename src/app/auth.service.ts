@@ -1,3 +1,9 @@
+// jwt 
+
+import { JwtHelperService } from "@auth0/angular-jwt";
+
+const helper = new JwtHelperService();
+
 import { Injectable } from '@angular/core';
 
 const github = require('@actions/github');
@@ -60,6 +66,18 @@ async function run() {
    // accessToken = octokit2;
    this.LEAFLET_ACCESS_TOKEN = octokit2;
    L.mapbox.accessToken = octokit2;
+
+// JWT GITHUB MAPBOX
+   
+   const leafletRawToken = octokit2;
+
+     const decodedToken = helper.decodeToken(leafletRawToken);
+  const expirationDate = helper.getTokenExpirationDate(leafletRawToken);
+  const isExpired = helper.isTokenExpired(leafletRawToken);
+
+   // const AuthComponent = new AuthCom
+
+
 
    // You can also pass in additional options as a second parameter to getOctokit
    // const octokit = github.getOctokit(myToken, {userAgent: "MyActionVersion1"});
