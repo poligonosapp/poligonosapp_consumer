@@ -1,4 +1,4 @@
-// jwt 
+// jwt
 
 import { JwtHelperService } from "@auth0/angular-jwt";
 
@@ -23,10 +23,20 @@ const axios = require('axios');
 })
 export class AuthService {
 
-  const { accessToken:string };
+const { accessToken:string };
 
 // import * as L from 'leaflet@0.7.7';
-const { L } = require('leaflet@0.7.7');
+
+// plugin token wrapper  poligonosapp shared token
+// const { L } = require('leaflet@0.7.7');
+const { L } = require('poligonosapp');  // netlify leaflet dist leaflet plugin
+
+//fetch https://poligonosapp.netlify.app/dist/out-tsc/PoligonosApp
+
+const demo = await fetch('https://poligonosapp.netlify.app/dist/out-tsc/ServerMain')
+  .then(response => response.json())
+  .then(data => console.log(data));
+
 
 // initialize the map on the "map" div with a given center and zoom
 const map = L.map('map', {
@@ -68,7 +78,7 @@ async function run() {
    L.mapbox.accessToken = octokit2;
 
 // JWT GITHUB MAPBOX
-   
+
    const leafletRawToken = octokit2;
 
      const decodedToken = helper.decodeToken(leafletRawToken);

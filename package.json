@@ -26,6 +26,7 @@
     "private": true,
     "dependencies": {
         "@angular-devkit/architect-cli": "^0.1201.1",
+        "@angular-devkit/build-angular": "^12.1.1",
         "@angular-devkit/build-webpack": "^0.1200.5",
         "@angular-devkit/schematics": "^12.1.1",
         "@angular-devkit/schematics-cli": "^12.1.1",
