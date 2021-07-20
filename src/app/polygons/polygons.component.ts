@@ -25,6 +25,8 @@ import { L, GeoJSON, Polygon} from 'poligonosapp';
 
 alert('loading polygons...');
 
+const railsEndpoint = 'https://poligonosapp-api.herokuapp.com/polygons';
+
 
 
 // import * as LT from '@types/leaflet';
