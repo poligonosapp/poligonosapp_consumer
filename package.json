@@ -6,7 +6,7 @@
       "entryFile": "public_api.ts"
     }
   },
-  "version": "1.8.7",
+  "version": "1.8.8",
   "type": "module",
   "license": "Apache-2.0",
   "author": "Fabio Rodrigues <https://www.facebook.com/kefaro>, Luis Mendes <machadoluismendes@gmail.com>",
