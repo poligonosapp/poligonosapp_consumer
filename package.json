@@ -39,6 +39,7 @@
     "@capacitor/keyboard": "1.0.0",
     "@ionic/angular": "^5.5.2",
     "@ionic/angular-toolkit": "^4.0.0",
+    "@ngrx/store": "^12.3.0",
     "@types/geojson": "^7946.0.7",
     "@types/leaflet": "^1.7.1",
     "angular-cli-ghpages": "^1.0.0-rc.2",
@@ -86,7 +87,8 @@
     "semantic-release": "^17.4.3",
     "ts-node": "~8.3.0",
     "tslib": "^2.2.0",
-    "typescript": "^4.0.7"
+    "typescript": "^4.0.7",
+    "webpack": "^5.49.0"
   },
   "description": "demo",
   "engines": {

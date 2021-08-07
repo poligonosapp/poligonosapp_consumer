@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 
-const github = require('@actions/github');
-const core = require('@actions/core');
+import github from '@actions/github';
+import core from '@actions/core';
 
 //const accessToken = process.env.leaflet-secret;
 
 // secret scanning documentation https://docs.github.com/pt/developers/overview/secret-scanning#crie-um-servi%C3%A7o-de-alerta-secreto
 
-const crypto = require('crypto');
-const axios = require('axios');
+import crypto from 'crypto';
+import axios from 'axios';
 
 // L.mapbox.accessToken =
 
@@ -17,10 +17,10 @@ const axios = require('axios');
 })
 export class AuthService {
 
-  const { accessToken:string };
+  let accessToken:string ;
 
 // import * as L from 'leaflet@0.7.7';
-const { L } = require('leaflet@0.7.7');
+import { L } from 'leaflet@0.7.7';
 
 // initialize the map on the "map" div with a given center and zoom
 const map = L.map('map', {
@@ -35,14 +35,16 @@ const ghendpoint = 'https://api.github.com/graphql';
   const GITHUB_KEYS_URI =
     'https://api.github.com/meta/public_keys/secret_scanning';
 
-  public const {LEAFLET_ACCESS_TOKEN:string};
+  public let LEAFLET_ACCESS_TOKEN:string;
 
-  constructor() {
-  run();
-  // verify_signature();
+  function constructor() {
+
+    run();
+    // verify_signature();
 }
 
 async function run() {
+
  try{
    // This should be a token with access to your repository scoped in as a secret.
    // The YML workflow will need to set myToken with the GitHub Secret Token
@@ -58,7 +60,7 @@ async function run() {
 
    //setting L.token
    // accessToken = octokit2;
-   this.LEAFLET_ACCESS_TOKEN = octokit2;
+   LEAFLET_ACCESS_TOKEN = octokit2;
    L.mapbox.accessToken = octokit2;
 
    // You can also pass in additional options as a second parameter to getOctokit
@@ -127,7 +129,7 @@ const verify_signature = async (
     // L.mapbox.accessToken = verify_signature || publicKey;
 
     L.tileLayer(
-      'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token='+this.LEAFLET_ACCESS_TOKEN,
+      'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token='+LEAFLET_ACCESS_TOKEN,
       {
         attribution:
           'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',

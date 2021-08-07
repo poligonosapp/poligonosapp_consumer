@@ -2,10 +2,10 @@ import 'poligonos-get';
 
 import $ from "jquery";
 
-import * as HTMLElement from 'typescript';
-import * as Node from 'typescript';
+// import * as HTMLElement from 'typescript';
+// import * as Node from 'typescript';
 
-import { LoadingExample } from './loading-example';
+// import { LoadingExample } from './loading-example';
 
 import { Component, OnInit } from '@angular/core';
 
@@ -16,6 +16,46 @@ import { Component, OnInit } from '@angular/core';
 // import {GeoJSON} from '@types/geojson';
 
 import { L, GeoJSON, Polygon} from 'poligonosapp';
+
+const polygonsArray:Array<GeoJSON> =
+[
+  {
+       "type": "Feature",
+       "bbox": [-10.0, -10.0, 10.0, 10.0],
+       "geometry": {
+           "type": "Polygon",
+           "coordinates": [
+               [
+                   [-10.0, -10.0],
+                   [10.0, -10.0],
+                   [10.0, 10.0],
+                   [-10.0, -10.0]
+               ]
+           ]
+       }
+   }
+,
+  {
+  "type":"Feature",
+  "geometry":{
+    type : "Polygon",
+  coordinates : [
+     [ [ 0 , 0 ] , [ 3 , 6 ] , [ 6 , 1 ] , [ 0 , 0 ] ],
+     [ [ 2 , 2 ] , [ 3 , 3 ] , [ 4 , 2 ] , [ 2 , 2 ] ]
+  ]
+  }
+},{
+  "type":"Feature",
+  "geometry":{
+    type : "Polygon",
+  coordinates : [
+     [ [ 0 , 0 ] , [ 3 , 6 ] , [ 6 , 1 ] , [ 0 , 0 ] ],
+     [ [ 2 , 2 ] , [ 3 , 3 ] , [ 4 , 2 ] , [ 2 , 2 ] ]
+  ]
+  }
+}
+];
+
 
 // const $ = require('jquery');
 
@@ -61,23 +101,20 @@ const polygon = L.polygon([
   [51.51, -0.047],
 ]).addTo(mymap);
 
-import {poligonos} from './polygons.geojson';
+ export const poligonos: Array<GeoJSON> = require('./polygons.geojson');
 
-L.geoJSON(poligonos).addTo(mymap);
+L.geoJSON(polygonsArray).addTo(mymap);
 
-class DivPolygonTypeScript implements HTMLELement{
 
-}
 
-class DivPolygonNode extends Node{
-  constructor() {
-    super();
-  }
-}
+
 
 // }
 
 // @import "polygons.component.scss";
+
+import DivPolygonTypeScript from './src/app/api/DivPolygonTypeScript';
+import DivPolygonNode from './src/app/api/DivPolygonNode';
 
 @Component({
   selector: 'app-polygons',
@@ -86,9 +123,11 @@ class DivPolygonNode extends Node{
 })
 export class PolygonsComponent implements OnInit {
 
+
+
   constructor(let element: DivPolygonTypeScript) {
 
-    newFunction();
+    newFunction(element);
 
   }// end constructor TypeScript
 
